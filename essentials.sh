@@ -1,6 +1,5 @@
 # Description: This file contains the essential functions for the installation of Arch Linux
 install_apps() {
-    update_system
     sudo pacman -S firefox kitty fastfetch waybar feh ranger vim neovim obsidian discord qbittorrent krita thermald blueman flatpak python-pillo ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav gstreamer noto-fonts-cjk adobe-source-han-sans-otc-fonts otf-ipafont tlp
     
 }
@@ -37,13 +36,12 @@ linux_config() {
 }
 
 all_functions() {
-    echo "Executando todas as funções..."
+    update_system
     install_apps
     yay_install
     devices
     bash_config
     linux_config
-    echo "Todas as funções foram executadas."
 }
 
 
@@ -54,6 +52,7 @@ echo "2 - yay install"
 echo "3 - Devices"
 echo "4 - Bash config"
 echo "5 - Linux config"
+echo "6 - all"
 
 read -p "Digite os números separados por espaço: " input
 
